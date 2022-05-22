@@ -14,4 +14,3 @@
 5. react toastify
 6. react leaflet
 7. react form hook
-8. react firebase hooks

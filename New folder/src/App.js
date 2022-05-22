@@ -4,8 +4,6 @@ import { PublicRoutes } from "./Routes/PublicRoutes";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from "react";
-import { ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(() => {
@@ -22,7 +20,6 @@ function App() {
             ))}
         </Routes>
       </Header>
-      <ToastContainer />
     </div>
   );
 }
