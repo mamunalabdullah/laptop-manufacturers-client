@@ -4,7 +4,9 @@ import { FaHeadset, FaTools, FaHandsHelping, FaEuroSign } from "react-icons/fa";
 const BusinessSummary = () => {
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 p-20">
+    <div>
+      <h2 className="text-secondary text-2xl text-center font-bold pt-10 uppercase">Our Business at a glance</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 p-20">
       <div className="card lg:max-w-lg bg-info shadow-xl">
         <figure className="px-10 pt-10">
           <div className="font-bold text-5xl text-warning">
@@ -45,6 +47,7 @@ const BusinessSummary = () => {
           <h2 className="card-title">10+ Tools Manufacture</h2>
         </div>
       </div>
+    </div>
     </div>
   );
 };

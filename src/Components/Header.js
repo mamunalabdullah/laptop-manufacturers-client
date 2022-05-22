@@ -1,8 +1,15 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
+import auth from "../Firebase/firebase.init";
 
 const Header = ({children}) => {
   const [dark, setDark] = useState(false);
+  const [user] = useAuthState(auth); 
+  const logout = () => {
+    signOut(auth);
+  };
   const menuItems = (
     <>
       <li>
@@ -16,9 +23,9 @@ const Header = ({children}) => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/login" className="rounded-lg hover:bg-primary">
+        {user ? <button className="btn btn-ghost font-bold" onClick={logout}>Log Out</button> :<NavLink to="/login" className="rounded-lg hover:bg-primary">
           Login
-        </NavLink>
+        </NavLink>}
       </li>
       <label className="swap swap-rotate">
         <input type="checkbox" onClick={() => setDark(!dark)} />
