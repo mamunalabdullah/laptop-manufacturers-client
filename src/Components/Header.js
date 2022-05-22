@@ -23,7 +23,12 @@ const Header = ({children}) => {
         </NavLink>
       </li>
       <li>
-        {user ? <button className="btn btn-ghost font-bold" onClick={logout}>Log Out</button> :<NavLink to="/login" className="rounded-lg hover:bg-primary">
+        {user ? <>
+          <NavLink to="/dashboard" className="rounded-lg hover:bg-primary">
+          Dashboard
+        </NavLink>
+          <button className="btn btn-ghost font-bold ml-3" onClick={logout}>Log Out</button>
+        </> :<NavLink to="/login" className="rounded-lg hover:bg-primary">
           Login
         </NavLink>}
       </li>

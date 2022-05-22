@@ -79,7 +79,7 @@ const Login = () => {
                   type="password"
                   placeholder="Type here your password"
                   className="input input-bordered w-full max-w-xs"
-                  {...register("email", {
+                  {...register("password", {
                       required: {
                           value: true,
                           message: "Required Password"
