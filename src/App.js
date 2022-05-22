@@ -21,7 +21,7 @@ function App() {
             ))}
         </Routes>
       </Header>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

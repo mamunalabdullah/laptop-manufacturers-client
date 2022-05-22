@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Sound Card",
+        "img": "https://i.ibb.co/fpxT98r/mad-g1e77de403-1920.jpg",
+        "des": "The sound card can accept an analog sound (as from a microphone or audio tape) and convert it to digital data that can be stored in an audio file, or it can accept digitized audio signals (as from an audio file) and convert them to analog signals that can be played on the computer's speakers.",
+        "available": 10000,
+        "order": 500,
+        "price": 1000
+    },
+    {
+        "name": "Lan Card",
+        "img": "https://i.ibb.co/GTDsb9L/network-gae301fa2f-1920.jpg",
+        "des": "The purpose of a LAN card is to create a physical connection to the network - to provide an open 'door,' as it were. The first interface supported by a LAN card is a physical interface through which the cable plugs into the card.",
+        "available": 10000,
+        "order": 1000,
+        "price": 300
+    },
+    {
+        "name": "Ram",
+        "img": "https://i.ibb.co/whL3NXS/ram.jpg",
+        "des": "RAM stands for random-access memory, but what does that mean? Your computer RAM is essentially short term memory where data is stored as the processor needs it. This isn't to be confused with long-term data that's stored on your hard drive, which stays there even when your computer is turned off.",
+        "available": 10000,
+        "order": 100,
+        "price": 2000
+    },
+    {
+        "name": "Solid State Drive",
+        "img": "https://i.ibb.co/Y4gcbxB/solid-state-drive-g0c0d83010-1920.jpg",
+        "des": "A solid-state drive (SSD) is a new generation of storage device used in computers. SSDs use flash-based memory, which is much faster than a traditional mechanical hard disk. Upgrading to an SSD is one of the best ways to speed up your computer.",
+        "available": 10000,
+        "order": 100,
+        "price": 4500
+    },
+    {
+        "name": "VGA Cable",
+        "img": "https://i.ibb.co/Vww8hD1/blue-g51ce2c7eb-1920.jpg",
+        "des": "A VGA (video graphics array) connector was created for use with many types of devices that had graphics cards. First used in the 1980s, it was common to see VGA connectors on televisions, laptops, computer monitors, projectors, and other devices.",
+        "available": 10000,
+        "order": 1000,
+        "price": 450
+    },
+    {
+        "name": "Motherboard",
+        "img": "https://i.ibb.co/41mmXmS/cyber-g4bb4ac872-1920.jpg",
+        "des": "The motherboard is the backbone that ties the computer's components together at one spot and allows them to talk to each other. Without it, none of the computer pieces, such as the CPU, GPU, or hard drive, could interact. Total motherboard functionality is necessary for a computer to work well.",
+        "available": 10000,
+        "order": 100,
+        "price": 7500
+    }
+]
