@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import { PublicRoutes } from "./Routes/PublicRoutes";
 import AOS from 'aos';
@@ -21,7 +20,6 @@ function App() {
             ))}
         </Routes>
       </Header>
-      {/* <Footer /> */}
     </div>
   );
 }
