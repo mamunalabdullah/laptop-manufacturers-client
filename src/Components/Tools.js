@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useTools from '../Hooks/useTools';
 import PurchaseTool from '../Pages/Tools/PurchaseTool';
 import ToolCard from './ToolCard';
 
 const Tools = () => {
-    const [tools, setTools] = useState([]);
+    const [tools, setTools] = useTools();
     const [item, setItem] = useState(null);
-    useEffect( () => {
-        fetch(`http://localhost:5000/tool`)
-        .then(res =>  res.json())
-        .then(data =>  setTools(data))
-    }, []);
+    
     return (
         <div>
             <h4 className='text-xl text-center text-primary font-bold mt-20 uppercase'>Tools we Provide</h4>

@@ -26,7 +26,7 @@ const Header = ({children}) => {
       </li>
       <li>
         {user && admin ? <>
-          <NavLink to="/dashboard" className="rounded-lg hover:bg-primary">
+          <NavLink to="/dashboard/add-admin" className="rounded-lg hover:bg-primary">
           Dashboard
         </NavLink>
           <button className="btn btn-ghost font-bold ml-3" onClick={logout}>Log Out</button>
@@ -62,6 +62,24 @@ const Header = ({children}) => {
         {/* <!-- Navbar --> */}
         <div className="w-full navbar bg-base-300 px-10 lg:px-20">
           <div className="flex-1 text-2xl font-bold">
+          <label
+          htmlFor="dashboard-menu"
+          className="btn btn-info drawer-button lg:hidden mr-3"
+        >
+          <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="inline-block w-6 h-6 stroke-current"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+        </label>
             <NavLink to="/">Laptop-Manufacturers</NavLink>
           </div>
           <div className="flex-none lg:hidden">

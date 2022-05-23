@@ -10,6 +10,8 @@ import { ToastContainer } from 'react-toastify';
 import RequireAuth from "./Routes/RequireAuth";
 import AdminRoute from "./Routes/AdminRoute";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import AddAdmin from "./Pages/Dashboard/AddAdmin";
+import AddTool from "./Pages/Dashboard/AddTool";
 
 function App() {
   useEffect(() => {
@@ -30,8 +32,10 @@ function App() {
               ))}
             </Route>
             <Route element={<AdminRoute />}>
-              
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="dashboard" element={<Dashboard />} >
+                  <Route path="add-admin" element={<AddAdmin />} />
+                  <Route path="add-tool" element={<AddTool />} />
+                </Route>
             </Route>
         </Routes>
       </Header>
