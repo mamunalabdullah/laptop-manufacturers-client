@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
 import auth from "../Firebase/firebase.init";
+import useAdmin from "../Hooks/useAdmin";
 
 const Header = ({children}) => {
   const [dark, setDark] = useState(false);
   const [user] = useAuthState(auth); 
+  const [admin] = useAdmin();
   const logout = () => {
     signOut(auth);
   };
@@ -23,7 +25,7 @@ const Header = ({children}) => {
         </NavLink>
       </li>
       <li>
-        {user ? <>
+        {user && admin ? <>
           <NavLink to="/dashboard" className="rounded-lg hover:bg-primary">
           Dashboard
         </NavLink>
