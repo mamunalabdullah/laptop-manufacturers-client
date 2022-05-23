@@ -46,5 +46,29 @@
         "available": 10000,
         "order": 100,
         "price": 7500
+    },
+    {
+        "name": "keyboard",
+        "img": "https://i.ibb.co/HHv6rJc/keyboard-g41a7b0c8d-1920.jpg",
+        "des": "A keyboard is a peripheral device that enables a user to input text into a computer or any other electronic machinery. A keyboard is an input device and is the most basic way for the user to communicate with a computer.",
+        "available": 500,
+        "order": 50,
+        "price": 600
+    },
+    {
+        "name": "Speaker",
+        "img": "https://i.ibb.co/30m1SLh/music-gf13c81391-1920.jpg",
+        "des": "Speakers are transducers that convert electromagnetic waves into sound waves. The speakers receive audio input from a device such as a computer or an audio receiver. This input may be either in analog or digital form.",
+        "available": 1000,
+        "order": 50,
+        "price": 1100
+    },
+    {
+        "name": "Hard Disk",
+        "img": "https://i.ibb.co/Y2NPTn6/hard-drive-gfdd3cf166-1920.jpg",
+        "des": "Hard disk, also called hard disk drive or hard drive, magnetic storage medium for a computer. Hard disks are flat circular plates made of aluminum or glass and coated with a magnetic material.",
+        "available": 5000,
+        "order": 100,
+        "price": 6000
     }
 ]
