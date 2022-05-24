@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const ToolCard = ({tool, setItem}) => {
+const ToolCard = ({tool}) => {
+  const navigate = useNavigate();
+
+  const handlePurchase = id => {
+    navigate(`/tool/${id}`);
+  }
   return (
     <div className="card lg:max-w-lg bg-base-300 shadow-xl">
       <figure>
@@ -16,7 +22,7 @@ const ToolCard = ({tool, setItem}) => {
         <p className="text-error text-xl font-bold">Minimum Order: {tool.order}</p>
         <p className="text-warning text-xl font-bold">Price per Quantity: ${tool.price}</p>
         <div className="card-actions justify-end">
-        <label htmlFor="purchaseModal" className="btn btn-primary modal-button" onClick={() => setItem(tool)}>Buy Now</label>
+        <label className="btn btn-primary" onClick={() => handlePurchase(tool._id)}>Buy Now</label>
         </div>
       </div>
     </div>

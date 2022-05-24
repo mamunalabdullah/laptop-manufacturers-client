@@ -1,136 +1,106 @@
-import React from "react";
+import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
+import useSingleTool from '../../Hooks/useSingleTool';
 
-const PurchaseTool = ({ item }) => {
-  const { name, available, order, price } = item;
-  const handleOrder = event => {
-    event.preventDefault();
-    // const oldOrder = event.target.oldOrder.value;
-    // const oldPrice = event.target.oldPrice.value;
-    // const order = event.target.order.value;
-    // const price = event.target.price.value;
-    const name = event.target.name.value;
-    const email = event.target.email.value;
-    const phone = event.target.phone.value;
-    console.log(order,name,email,phone);
-  }
-  return (
-    <div>
-      <input type="checkbox" id="purchaseModal" className="modal-toggle" />
-      <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
-          <label
-            htmlFor="purchaseModal"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
-          >
-            ✕
-          </label>
-          <h3 className="font-bold text-xl text-center text-secondary">
-            {name} Purchase...
-          </h3>
-          <form onSubmit={handleOrder} className="grid grid-cols-1 gap-3 justify-items-center mt-2">
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-error font-bold">
-                  Available Quantity:
-                </span>
-              </label>
-              <input
-                type="number"
-                value={available}
-                className="input input-bordered w-full max-w-xs"
-                disabled
-              />
+const Order = () => {
+    const [user] = useAuthState(auth);
+    const { id } = useParams();
+    const [tool] = useSingleTool(id);
+
+
+    const orderProduct = e => {
+        e.preventDefault();
+        const availableOld = parseInt(tool.available);
+        const minimum = parseInt(tool.order);
+        const newOrder = parseInt(e.target.newOrder.value);
+        
+
+        if (availableOld > minimum && minimum <= newOrder) {
+            const available = availableOld - newOrder;
+            const updateAvailable = { available }
+            const url = `http://localhost:5000/update/${id}`;
+            console.log(url);
+            fetch(url, {
+                method: 'PUT',
+
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                body: JSON.stringify(
+                    updateAvailable
+                ),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    e.target.reset();
+                    // toast(' success')
+                    console.log(data);
+
+                });
+        } else {
+            alert('minimum order not correct');
+        }
+
+    }
+
+    return (
+        <div className="hero min-h-screen bg-base-100">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="card max-w-lg bg-base-200 shadow-xl">
+                    <figure><img src={tool.img} alt="" /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{tool.name}</h2>
+                        <p>{tool.des}</p>
+                        <form>
+                            <label className="input-group mb-2">
+                                <span>Available Quantity:</span>
+                                <input type="text" name='available' value={tool.available} className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Minimum Purchase Quantity:</span>
+                                <input type="text" name='order' value={tool.order} className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Price per Quantity</span>
+                                <input type="text" name='price' value={tool.price} className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Total Price:</span>
+                                <input type="text" name='totalPrice' className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Name</span>
+                                <input type="text" name='name' value={user.displayName} className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Email</span>
+                                <input type="email" name='email' value={user.email} className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Phone Number</span>
+                                <input type="text" name='phone' className="input input-bordered" />
+                            </label>
+                            <button className='btn max-w-full' type="submit">
+                                Purchase
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
+                    <div className="card-body">
+                        <form onSubmit={orderProduct}>
+                            <input className='input w-full max-w-full mb-2' type='number' name='newOrder' placeholder="Enter quantity number" />
+                            <button className='btn' type="submit">
+                                Purchase
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-error font-bold">
-                  Minimum Order:
-                </span>
-              </label>
-              <input
-                name="oldOrder"
-                type="number"
-                value={order}
-                className="input input-bordered w-full max-w-xs"
-                disabled
-              />
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-error font-bold">
-                  Price per Unit:
-                </span>
-              </label>
-              <input
-                name="oldPrice"
-                type="number"
-                value={price}
-                className="input input-bordered w-full max-w-xs"
-                disabled
-              />
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-info font-bold">
-                  Make Your Order:
-                </span>
-              </label>
-              <input
-                name="order"
-                type="number"
-                placeholder="enter your quantity"
-                className="input input-bordered w-full max-w-xs"
-              />
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-info font-bold">Your Price:</span>
-              </label>
-              <input
-                name="price"
-                type="text"
-                value="enter your quantity"
-                className="input input-bordered w-full max-w-xs"
-                disabled
-              />
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <input
-                name="name"
-                type="text"
-                placeholder="Enter your Name here"
-                className="input input-bordered w-full max-w-xs"
-                required
-              />
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter your Email here"
-                className="input input-bordered w-full max-w-xs"
-                required
-              />
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <input
-                name="phone"
-                type="text"
-                placeholder="Enter your Phone Number here"
-                className="input input-bordered w-full max-w-xs"
-              />
-            </div>
-            <input
-              type="submit"
-              value="Order Now"
-              className="btn btn-primary input input-bordered w-full max-w-xs"
-              required
-            />
-          </form>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default PurchaseTool;
+export default Order;

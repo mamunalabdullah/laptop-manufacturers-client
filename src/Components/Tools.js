@@ -19,7 +19,7 @@ const Tools = () => {
             </div>
             {item && <PurchaseTool item={item}></PurchaseTool>}
             <div className='text-center py-5 '>
-            <button className='btn btn-secondary px-20'><Link to="/alltool">See All</Link></button>
+            <Link to="/alltool" className='btn btn-secondary px-20'>See All</Link>
             </div>
         </div>
     );
