@@ -4,13 +4,13 @@ import { useParams } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 import useSingleTool from '../../Hooks/useSingleTool';
 
-const Order = () => {
+const PurchaseTool = () => {
     const [user] = useAuthState(auth);
     const { id } = useParams();
     const [tool] = useSingleTool(id);
 
 
-    const orderProduct = e => {
+    const purchaseTool = e => {
         e.preventDefault();
         const availableOld = parseInt(tool.available);
         const minimum = parseInt(tool.order);
@@ -90,7 +90,7 @@ const Order = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
                     <div className="card-body">
-                        <form onSubmit={orderProduct}>
+                        <form onSubmit={purchaseTool}>
                             <input className='input w-full max-w-full mb-2' type='number' name='newOrder' placeholder="Enter quantity number" />
                             <button className='btn' type="submit">
                                 Purchase
@@ -103,4 +103,4 @@ const Order = () => {
     );
 };
 
-export default Order;
+export default PurchaseTool;

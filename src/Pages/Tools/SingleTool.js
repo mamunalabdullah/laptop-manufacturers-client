@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SingleTool = ({tool}) => {
-  const {name, des, available, order, price, _id} = tool
     const navigate = useNavigate();
 
     const handlePurchase = id => {
