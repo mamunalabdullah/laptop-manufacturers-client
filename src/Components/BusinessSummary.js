@@ -5,7 +5,7 @@ const BusinessSummary = () => {
 
   return (
     <div>
-      <h2 className="text-secondary text-2xl text-center font-bold pt-10 uppercase">Our Business at a glance</h2>
+      <h2 className="text-primary text-xl text-center font-bold pt-10 uppercase">Our Business at a glance</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 p-20">
       <div className="card lg:max-w-lg bg-info shadow-xl">
         <figure className="px-10 pt-10">
