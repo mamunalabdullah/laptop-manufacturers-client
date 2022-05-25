@@ -41,7 +41,7 @@ const Register = () => {
       const onSubmit = async(data) => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name});
-        navigate("/home")
+        navigate("/home");
       };
     return (
         <div className="hero min-h-screen bg-base-200">

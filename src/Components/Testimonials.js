@@ -15,7 +15,7 @@ const Testimonials = () => {
             <p className='text-center font-bold text-3xl'>Our customers provides their valuable feedback so that we can improve our services.</p>
         
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-20'>
-                {reviews.slice(0, 3).map(review => <TestimonialCard key={review._id} review={review} />)}
+                {reviews.slice(-3).map(review => <TestimonialCard key={review._id} review={review} />)}
             </div>
         </div>
     );
