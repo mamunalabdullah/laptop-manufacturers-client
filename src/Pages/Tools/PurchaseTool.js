@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/firebase.init';
 import useSingleTool from '../../Hooks/useSingleTool';
 
@@ -32,8 +33,9 @@ const PurchaseTool = () => {
         const url = `http://localhost:5000/order`;
         axios.post(url, item)
         .then(res => {
-            console.log(res)
-            e.target.reset()
+            console.log(res);
+            e.target.reset();
+            toast("Purchase Order Add Success");
         })
     }
 

@@ -4,6 +4,7 @@ import auth from "../Firebase/firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Components/Loading";
 import { Link, useNavigate } from "react-router-dom";
+import useToken from '../Hooks/useToken';
 
 const Register = () => {
     const {
@@ -19,12 +20,9 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-    
-      const onSubmit = async(data) => {
-        await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name});
-        navigate("/home")
-      };
+
+      const [token] = useToken(user || goUser);
+
       const navigate = useNavigate();
       let errorElement;
     
@@ -37,13 +35,14 @@ const Register = () => {
       if (loading || goLoading || updating) {
         return <Loading />
       }
-      if (user || goUser) {
-        return (
-          <div>
-            <p>Signed In User: {user.email}</p>
-          </div>
-        );
+      if (token) {
+        navigate("/home");
       }
+      const onSubmit = async(data) => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name});
+        navigate("/home")
+      };
     return (
         <div className="hero min-h-screen bg-base-200">
       <div className="hero-content">

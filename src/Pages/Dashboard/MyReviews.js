@@ -20,49 +20,49 @@ const MyReviews = () => {
         
         axios.post(url, review)
         .then(res => {
-        console.log(res)
-        event.target.reset()
-        toast("Review Add")   
+        console.log(res);
+        event.target.reset();
+        toast("Review Add Success");  
     })
     }
     return (
-        <div class="hero min-h-screen bg-base-100">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <div class="card flex-shrink-0 w-96 shadow-2xl bg-base-200">
-      <div class="card-body">
+        <div className="hero min-h-screen bg-base-100">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="card flex-shrink-0 w-96 shadow-2xl bg-base-200">
+      <div className="card-body">
         <form onSubmit={handleReview}>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Image</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Image</span>
           </label>
-          {user.photoURL? <input type="text" value={user?.photoURL} name="image" class="input input-bordered" /> : <input type="text" name="image" class="input input-bordered" />}
+          {user.photoURL? <input type="text" value={user?.photoURL} name="image" className="input input-bordered" /> : <input type="text" name="image" className="input input-bordered" />}
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Name</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
           </label>
-          <input type="text" value={user?.displayName} name="name" class="input input-bordered" />
+          <input type="text" value={user?.displayName} name="name" className="input input-bordered" />
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Email</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
           </label>
-          <input type="email" value={user?.email} name="email" class="input input-bordered" />
+          <input type="email" value={user?.email} name="email" className="input input-bordered" />
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Your Feedback</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Your Feedback</span>
           </label>
-          <input type="text" placeholder='Enter your feedback' name="feedback" class="input input-bordered" />
+          <input type="text" placeholder='Enter your feedback' name="feedback" className="input input-bordered" />
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Your Ratings</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Your Ratings</span>
           </label>
-          <input type="number" placeholder='Enter your ratings' name="rating" class="input input-bordered" />
+          <input type="number" placeholder='Enter your ratings' name="rating" className="input input-bordered" />
         </div>
-        <div class="form-control mt-6">
-          <button class="btn btn-primary">Review</button>
+        <div className="form-control mt-6">
+          <button className="btn btn-primary">Review</button>
         </div>
         </form>
       </div>
