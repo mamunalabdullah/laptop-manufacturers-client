@@ -19,7 +19,7 @@ const MyReviews = () => {
         const url = "http://localhost:5000/review";
         
         axios.post(url, review)
-    .then(res => {
+        .then(res => {
         console.log(res)
         event.target.reset()
         toast("Review Add")   

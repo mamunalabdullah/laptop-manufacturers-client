@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
@@ -8,41 +9,32 @@ const PurchaseTool = () => {
     const [user] = useAuthState(auth);
     const { id } = useParams();
     const [tool] = useSingleTool(id);
+    const [price, setPrice] = useState(0);
+
 
 
     const purchaseTool = e => {
         e.preventDefault();
-        const availableOld = parseInt(tool.available);
-        const minimum = parseInt(tool.order);
         const newOrder = parseInt(e.target.newOrder.value);
-        
+        const available = parseInt(e.target.available.value);
+        const order = parseInt(e.target.order.value);
+        const image= e.target.image.value;
+        const toolName= e.target.toolName.value;
+        const price = parseInt(e.target.price.value);
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const totalPrice = parseInt(e.target.totalPrice.value) * price;
+        const phone = e.target.phone.value;
 
-        if (availableOld > minimum && minimum <= newOrder) {
-            const available = availableOld - newOrder;
-            const updateAvailable = { available }
-            const url = `http://localhost:5000/update/${id}`;
-            console.log(url);
-            fetch(url, {
-                method: 'PUT',
-
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-                body: JSON.stringify(
-                    updateAvailable
-                ),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    e.target.reset();
-                    // toast(' success')
-                    console.log(data);
-
-                });
-        } else {
-            alert('minimum order not correct');
-        }
-
+        const updatePrice = {totalPrice};
+        const item = {name, email, phone, updatePrice, newOrder, image, toolName, available,order, totalPrice };
+        setPrice(totalPrice);
+        const url = `http://localhost:5000/order`;
+        axios.post(url, item)
+        .then(res => {
+            console.log(res)
+            e.target.reset()
+        })
     }
 
     return (
@@ -53,7 +45,16 @@ const PurchaseTool = () => {
                     <div className="card-body">
                         <h2 className="card-title">{tool.name}</h2>
                         <p>{tool.des}</p>
-                        <form>
+                        <form onSubmit={purchaseTool}>
+
+                            <label className="input-group mb-2">
+                                <span>Tool Image URL:</span>
+                                <input type="text" name='image' value={tool.img} className="input input-bordered" disabled />
+                            </label>
+                            <label className="input-group mb-2">
+                                <span>Tool Name:</span>
+                                <input type="text" name='toolName' value={tool.name} className="input input-bordered" disabled />
+                            </label>
                             <label className="input-group mb-2">
                                 <span>Available Quantity:</span>
                                 <input type="text" name='available' value={tool.available} className="input input-bordered" disabled />
@@ -68,7 +69,7 @@ const PurchaseTool = () => {
                             </label>
                             <label className="input-group mb-2">
                                 <span>Total Price:</span>
-                                <input type="text" name='totalPrice' className="input input-bordered" disabled />
+                                <input type="text" value={price.totalPrice} name='totalPrice' className="input input-bordered" disabled />
                             </label>
                             <label className="input-group mb-2">
                                 <span>Name</span>
@@ -82,17 +83,12 @@ const PurchaseTool = () => {
                                 <span>Phone Number</span>
                                 <input type="text" name='phone' className="input input-bordered" />
                             </label>
+                            <label className="input-group mb-2">
+                                <span>Order Quantity</span>
+                                <input className='input input-bordered' type='number' name='newOrder' placeholder="Enter Order quantity" />
+                            </label>
+                            
                             <button className='btn max-w-full' type="submit">
-                                Purchase
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-200">
-                    <div className="card-body">
-                        <form onSubmit={purchaseTool}>
-                            <input className='input w-full max-w-full mb-2' type='number' name='newOrder' placeholder="Enter quantity number" />
-                            <button className='btn' type="submit">
                                 Purchase
                             </button>
                         </form>
