@@ -36,7 +36,7 @@ const MyOrders = () => {
         <div>
             <h2 className='text-2xl text-center my-6 font-bold'>Total Orders: <span className='text-secondary'>{orders.length}</span></h2>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table max-w-lg mx-auto">
                     <thead>
                         <tr>
                             <th>Product Name</th>

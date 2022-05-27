@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -50,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Copyright © 2022 - All right reserved by Laptop-Manufacturers Industries Ltd</p>
+        <p>Copyright &copy; {currentYear} - All right reserved by Laptop-Manufacturers Industries Ltd</p>
       </div>
     </footer>
   );

@@ -13,11 +13,9 @@ const Dashboard = () => {
             <div className="drawer-content px-12">
                 <h2 className='text-3xl text-center my-6 font-bold text-secondary'>Welcome to Dashboard</h2>
                 <Outlet />
-
-
             </div>
             <div className="drawer-side">
-                <label htmlhtmlFor="my-drawer-2" className="drawer-overlay"></label>
+                <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-200 rounded-lg text-base-content">
                     {!admin && <>
                         <li><Link className='font-bold' to="/dashboard">My Orders</Link></li>
