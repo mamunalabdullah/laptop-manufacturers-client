@@ -1,5 +1,7 @@
-# Website Feature:::
-1. Anyone can order laptop parts online.
+# Site Review
+
+## Website Feature:::
+1. Anyone can order Mobile parts online.
 2. They can see the available products quantity.
 3. They have to order minimum quantity of products.
 4. People can show their ordered products through dashboard.
@@ -11,7 +13,7 @@
 2. tailwind css
 3. DaisyUI
 4. react icons
-5. react toastify
+5. react fontAwsome
 6. react leaflet
 7. react form hook
 8. react firebase hooks

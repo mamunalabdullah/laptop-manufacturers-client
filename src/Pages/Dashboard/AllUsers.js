@@ -1,27 +1,36 @@
-import React from "react";
-import UsersRow from "./UsersRow";
+import React from 'react';
+import { toast } from 'react-toastify';
 
-const AllUsers = () => {
-  return (
-    <div>
-      <h2 className="text-2xl">All Users:</h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone Number</th>
-            </tr>
-          </thead>
-          <tbody>
-              <UsersRow />
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+const AllUsers = ({ user, refetch, index }) => {
+    const { email, role } = user;
+    const makeAdmin = () => {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('Failed to made an Admin')
+                }
+                return res.json()
+            })
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success('Successfully made an Admin');
+                }
+            })
+    }
+    return (
+        <tr>
+            <th>{index + 1}</th>
+            <td>{email}</td>
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button> : <small className='font-bold'>Already an Admin</small>}</td>
+            <td><button className="btn btn-xs">Remove User</button></td>
+        </tr>
+    );
 };
 
 export default AllUsers;

@@ -1,74 +1,51 @@
 [
     {
+        
         "name": "Sound Card",
-        "img": "https://i.ibb.co/fpxT98r/mad-g1e77de403-1920.jpg",
-        "des": "The sound card can accept an analog sound (as from a microphone or audio tape) and convert it to digital data that can be stored in an audio file, or it can accept digitized audio signals (as from an audio file) and convert them to analog signals that can be played on the computer's speakers.",
+        "img": "https://cdn.webshopapp.com/shops/15250/files/364382172/speaker-for-i-phone-11-61.jpg",
+        "des": "The loudspeaker is a small sound driver fitted within a mobile phone, or other communication device, which is used to produce sound. Traditionally, loudspeakers on mobile phones are used to produce sound alerts for events such as incoming calls, incoming messages and alarms.",
         "available": 10000,
         "order": 500,
         "price": 1000
     },
     {
-        "name": "Lan Card",
-        "img": "https://i.ibb.co/GTDsb9L/network-gae301fa2f-1920.jpg",
-        "des": "The purpose of a LAN card is to create a physical connection to the network - to provide an open 'door,' as it were. The first interface supported by a LAN card is a physical interface through which the cable plugs into the card.",
+        "name": "Processor",
+        "img": "https://u01.appmifile.com/images/2019/06/11/461a08d3-a2e8-4edb-abbb-4b3359c5591d.jpeg",
+        "des": "Your smartphone processor, also known as chipset, is a component that controls everything going on in your smartphone and ensures it functions correctly. You can compare it to the brain of the human body. Every action you perform on your smartphone goes straight to the processor.",
         "available": 10000,
         "order": 1000,
         "price": 300
     },
     {
         "name": "Ram",
-        "img": "https://i.ibb.co/whL3NXS/ram.jpg",
-        "des": "RAM stands for random-access memory, but what does that mean? Your computer RAM is essentially short term memory where data is stored as the processor needs it. This isn't to be confused with long-term data that's stored on your hard drive, which stays there even when your computer is turned off.",
+        "img": "http://cdn.gsmarena.com/pics/14/12/samsung-4gb-ram/gsmarena_001.jpg",
+        "des": "RAM stands for random-access memory, but what does that mean? Your mobile RAM is essentially short term memory where data is stored as the processor needs it. This isn't to be confused with long-term data that's stored on your hard drive, which stays there even when your mobile is turned off.",
         "available": 10000,
         "order": 100,
         "price": 2000
     },
     {
-        "name": "Solid State Drive",
-        "img": "https://i.ibb.co/Y4gcbxB/solid-state-drive-g0c0d83010-1920.jpg",
-        "des": "A solid-state drive (SSD) is a new generation of storage device used in computers. SSDs use flash-based memory, which is much faster than a traditional mechanical hard disk. Upgrading to an SSD is one of the best ways to speed up your computer.",
+        "name": "Camera sensor",
+        "img": "https://media.idownloadblog.com/wp-content/uploads/2018/12/Sony-3D-camera-sensor-002.jpg",
+        "des": "In any digital camera, the sensor is the most important piece of equipment. Without it, we wouldn’t be able to capture any images with our digital cameras. In fact, if you search around the internet, you may notice how many people agree that the sensor is more important than megapixels.",
         "available": 10000,
         "order": 100,
         "price": 4500
     },
     {
-        "name": "VGA Cable",
-        "img": "https://i.ibb.co/Vww8hD1/blue-g51ce2c7eb-1920.jpg",
-        "des": "A VGA (video graphics array) connector was created for use with many types of devices that had graphics cards. First used in the 1980s, it was common to see VGA connectors on televisions, laptops, computer monitors, projectors, and other devices.",
+        "name": "Battery",
+        "img": "https://cdn-reichelt.de/bilder/web/xxl_ws/D600/AKKU_10817.png",
+        "des": "Lithium-ion batteries found in most smartphones and electronics have a metal oxide cathode made of a cobalt, nickel, manganese or iron mix, a porous graphite anode that holds lithium ions within it and a lithium salt electrolyte.",
         "available": 10000,
         "order": 1000,
         "price": 450
     },
     {
         "name": "Motherboard",
-        "img": "https://i.ibb.co/41mmXmS/cyber-g4bb4ac872-1920.jpg",
-        "des": "The motherboard is the backbone that ties the computer's components together at one spot and allows them to talk to each other. Without it, none of the computer pieces, such as the CPU, GPU, or hard drive, could interact. Total motherboard functionality is necessary for a computer to work well.",
+        "img": "https://previews.123rf.com/images/eremin/eremin1811/eremin181100005/113628684-motherboard-for-smartphone-part-with-microcircuits-close-up-.jpg?fj=1",
+        "des": "A motherboard is one of the important part of a mobile phone. It holds together many of the crucial components of a mobile phone. It is a heart for your Mobile phone like CPU of a computer through which it runs. It holds together many of the crucial components of your mobile.",
         "available": 10000,
         "order": 100,
         "price": 7500
-    },
-    {
-        "name": "keyboard",
-        "img": "https://i.ibb.co/HHv6rJc/keyboard-g41a7b0c8d-1920.jpg",
-        "des": "A keyboard is a peripheral device that enables a user to input text into a computer or any other electronic machinery. A keyboard is an input device and is the most basic way for the user to communicate with a computer.",
-        "available": 500,
-        "order": 50,
-        "price": 600
-    },
-    {
-        "name": "Speaker",
-        "img": "https://i.ibb.co/30m1SLh/music-gf13c81391-1920.jpg",
-        "des": "Speakers are transducers that convert electromagnetic waves into sound waves. The speakers receive audio input from a device such as a computer or an audio receiver. This input may be either in analog or digital form.",
-        "available": 1000,
-        "order": 50,
-        "price": 1100
-    },
-    {
-        "name": "Hard Disk",
-        "img": "https://i.ibb.co/Y2NPTn6/hard-drive-gfdd3cf166-1920.jpg",
-        "des": "Hard disk, also called hard disk drive or hard drive, magnetic storage medium for a computer. Hard disks are flat circular plates made of aluminum or glass and coated with a magnetic material.",
-        "available": 5000,
-        "order": 100,
-        "price": 6000
     }
 ]
