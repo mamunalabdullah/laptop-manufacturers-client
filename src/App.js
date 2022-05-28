@@ -13,7 +13,6 @@ import AddReview from "./Pages/Dashboard/AddReview";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
-import ManageAllOrders from "./Pages/Dashboard/ManageAllOrders";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
 import Payment from "./Pages/Dashboard/Payment";
@@ -57,11 +56,6 @@ function App() {
           <Route path="makeAdmin" element={
             <RequireAdmin>
               <MakeAdmin></MakeAdmin>
-            </RequireAdmin>}>
-          </Route>
-          <Route path="manageAllOrders" element={
-            <RequireAdmin>
-              <ManageAllOrders></ManageAllOrders>
             </RequireAdmin>}>
           </Route>
           <Route path="addProduct" element={

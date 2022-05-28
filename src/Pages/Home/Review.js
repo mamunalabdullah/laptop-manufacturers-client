@@ -4,7 +4,7 @@ import Spinner from '../Shared/Spinner';
 import AllReview from './AllReview';
 
 const Review = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('review', () => fetch('http://localhost:5000/reviews', {
+    const { data: reviews, isLoading, refetch } = useQuery('review', () => fetch('https://young-river-14403.herokuapp.com/reviews', {
         method: 'GET',
         headers: {
             'content-type': 'application/json',

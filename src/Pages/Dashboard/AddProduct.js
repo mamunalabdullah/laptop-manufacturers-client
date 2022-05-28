@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const imgBbAPI = 'c681346f0b1492fc02ba7bbb1042cae9';
+    const imgBbAPI = '4e298032298c2c31a6468866bd43d312';
 
     const onSubmit = async data => {
         const image = data.image[0];
@@ -28,7 +28,7 @@ const AddProduct = () => {
                         available: data.available,
                         price: data.price
                     }
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://young-river-14403.herokuapp.com/products', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',
